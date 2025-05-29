@@ -178,7 +178,9 @@ export default function PokeCard(props){
             <h3>Moves</h3>
 
             <div className='pokemon-move-grid'>
-                {moves.map((moveObj, moveIndex)=>{
+                {moves
+                    // .sort((a, b) => a.move.name.localeCompare(b.move.name))
+                    .map((moveObj, moveIndex)=>{
                     return (
                         <button className='button-card pokemon-move' key={moveIndex} onClick={()=>{
                             fetchMoveData(moveObj?.move?.name, moveObj?.move?.url)
